@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Simple Blog Posts</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring webflux pagination</title>
+    <link data-th-href="@{/css/task.css}" rel="stylesheet">
 </head>
 <body>
-<h1>All posts</h1>
-<!--<form method="POST" th:action="/stream">-->
-<!--    <button type="submit" name="submit" value="value" class="link-button">POST request</button>-->
-<!--</form>-->
-<div>
-    <table>
+<div id="container">
+    <h2>Spring Webflux Pagination Example</h2>
+    <hr/>
+    <table id="alltasks">
         <thead>
         <tr>
-            <th>Content</th>
+            <th>Name</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="m : ${messages}">
-            <td th:text="${m.data}"></td>
+        <tr data-th-each="task: ${messages}">
+            <td>[[${task.data}]]</td>
         </tr>
         </tbody>
     </table>
-
 </div>
 </body>
 </html>
