@@ -3,7 +3,7 @@ function showAlert() {
         type: 'post',
         url: '/stream/stop',
         success: function() {
-            alert("STOPPED")
+            alert("Process stopped")
         }
     });
 }
