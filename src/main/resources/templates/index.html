@@ -3,12 +3,17 @@
 <head>
     <title>Spring webflux pagination</title>
     <link data-th-href="@{/css/task.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/demo.js}"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="container">
     <h2>Spring Webflux</h2>
     <hr/>
     <button type="button" th:onclick="|window.location.href='/stream/do'|">Start!</button>
+    <button type="submit" th:onclick="showAlert()" class="btn btn-warning">block item</button>
+
     <table id="alltasks">
         <thead>
         <tr>
