@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Spring webflux pagination</title>
     <link data-th-href="@{/css/task.css}" rel="stylesheet">
 </head>
 <body>
 <div id="container">
-    <h2>Spring Webflux Pagination Example</h2>
+    <h2>Spring Webflux</h2>
     <hr/>
+    <button type="button" th:onclick="|window.location.href='/stream/do'|">Start!</button>
     <table id="alltasks">
         <thead>
         <tr>

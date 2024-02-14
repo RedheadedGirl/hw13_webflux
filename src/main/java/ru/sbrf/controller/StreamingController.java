@@ -3,6 +3,7 @@ package ru.sbrf.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.reactive.result.view.Rendering;
 import org.thymeleaf.spring6.context.webflux.ReactiveDataDriverContextVariable;
@@ -21,6 +22,11 @@ import java.util.List;
 public class StreamingController  {
 
     @GetMapping
+    public String index(Model model) {
+        return "index";
+    }
+
+    @RequestMapping(value="/do")
     public Mono<Rendering> showIndex(final Model model) {
         IReactiveDataDriverContextVariable variable =
                 new ReactiveDataDriverContextVariable(findAll(), 1);
