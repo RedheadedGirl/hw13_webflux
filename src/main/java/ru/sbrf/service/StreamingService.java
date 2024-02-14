@@ -33,6 +33,7 @@ public class StreamingService {
     }
 
     public Flux<String> findAll() {
+        carryOn = true;
         return Flux.fromIterable(tasks)
                 .map(task -> {
                     task.setData(task.getData() + Instant.now().toString());
