@@ -6,10 +6,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Message {
-    private Long id;
+    private int id;
     private String data;
 
-    public Message(String data) {
+    public Message(int id, String data) {
+        this.id = id;
         this.data = data;
     }
 }
