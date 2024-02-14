@@ -1,4 +1,4 @@
-package ru.sbrf;
+package ru.sbrf.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,7 +25,6 @@ public class StreamingService {
 
     private boolean carryOn = true;
 
-
     static {
         for (int i = 1; i <= 50; i++) {
             Message message = new Message(i, "data ");
@@ -48,7 +47,7 @@ public class StreamingService {
         return this.carryOn;
     }
 
-    private String createValidJson(Message message) {
+    public String createValidJson(Message message) {
         String json = "";
         try {
             json = mapper.writeValueAsString(message);
@@ -56,7 +55,7 @@ public class StreamingService {
             throw new JsonException("Failed to create json", e);
         }
         try { // проверим на валидность перед тем как отдать. Если не валидно, кинем исключение
-            Message messageBack = mapper.readValue(json, Message.class);
+            mapper.readValue(json, Message.class);
         } catch (JsonProcessingException e) {
             throw new JsonException("Failed to restore object from json", e);
         }

@@ -11,7 +11,7 @@ import org.springframework.web.reactive.result.view.Rendering;
 import org.thymeleaf.spring6.context.webflux.IReactiveDataDriverContextVariable;
 import org.thymeleaf.spring6.context.webflux.ReactiveDataDriverContextVariable;
 import reactor.core.publisher.Mono;
-import ru.sbrf.StreamingService;
+import ru.sbrf.service.StreamingService;
 
 @Controller
 @RequestMapping("/stream")
