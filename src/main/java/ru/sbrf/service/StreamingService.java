@@ -3,6 +3,7 @@ package ru.sbrf.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -17,11 +18,12 @@ import java.util.List;
 @Service
 @Getter
 @Setter
+@RequiredArgsConstructor
 public class StreamingService {
 
     private static final List<Message> tasks = new ArrayList<>();
 
-    private ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper;
 
     private boolean carryOn = true;
 
