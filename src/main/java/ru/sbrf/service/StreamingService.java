@@ -55,11 +55,6 @@ public class StreamingService {
         } catch (JsonProcessingException e) {
             throw new JsonException("Failed to create json", e);
         }
-        try { // проверим на валидность перед тем как отдать. Если не валидно, кинем исключение
-            mapper.readValue(json, Message.class);
-        } catch (JsonProcessingException e) {
-            throw new JsonException("Failed to restore object from json", e);
-        }
         return json;
     }
 }
