@@ -13,6 +13,8 @@ import org.thymeleaf.spring6.context.webflux.ReactiveDataDriverContextVariable;
 import reactor.core.publisher.Mono;
 import ru.sbrf.service.StreamingService;
 
+import java.time.LocalDateTime;
+
 @Controller
 @RequestMapping("/stream")
 @RequiredArgsConstructor
@@ -36,7 +38,7 @@ public class StreamingController  {
     @RequestMapping(value="/stop")
     @ResponseStatus(value = HttpStatus.OK)
     public void stop() {
-        System.out.println("stopped");
+        System.out.println("stopped at " + LocalDateTime.now());
         streamingService.setCarryOn(false);
     }
 
